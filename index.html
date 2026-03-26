@@ -4,283 +4,387 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MEGA AI — 30-Minute Sales Call Playbook</title>
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
   <style>
-    @import url('https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap');
-    
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    html { scroll-behavior: smooth; }
     
     body {
       font-family: 'Satoshi', -apple-system, sans-serif;
-      background: #0a0a0a;
-      color: #e0e0e0;
+      background: #FDFDFD;
+      color: #1a1a1a;
       line-height: 1.7;
       -webkit-font-smoothing: antialiased;
     }
-    
-    .container {
-      max-width: 800px;
+
+    /* HEADER */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      background: rgba(255,255,255,0.8);
+      border-bottom: 1px solid #f3f4f6;
+    }
+    .header-inner {
+      max-width: 72rem;
       margin: 0 auto;
-      padding: 60px 24px 120px;
-    }
-    
-    .hero {
-      text-align: center;
-      padding: 80px 0 60px;
-      border-bottom: 1px solid #222;
-      margin-bottom: 60px;
-    }
-    
-    .hero-badge {
-      display: inline-block;
-      background: linear-gradient(135deg, #6366f1, #8b5cf6);
-      color: white;
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 6px 16px;
-      border-radius: 100px;
-      margin-bottom: 24px;
-    }
-    
-    h1 {
-      font-size: 42px;
-      font-weight: 700;
-      color: #fff;
-      line-height: 1.2;
-      margin-bottom: 16px;
-    }
-    
-    .hero-sub {
-      font-size: 18px;
-      color: #888;
-      max-width: 500px;
-      margin: 0 auto;
-    }
-    
-    h2 {
-      font-size: 28px;
-      font-weight: 700;
-      color: #fff;
-      margin: 64px 0 24px;
-      padding-top: 32px;
-      border-top: 1px solid #1a1a1a;
-    }
-    
-    h3 {
-      font-size: 20px;
-      font-weight: 700;
-      color: #c4b5fd;
-      margin: 40px 0 16px;
-    }
-    
-    h4 {
-      font-size: 17px;
-      font-weight: 700;
-      color: #a78bfa;
-      margin: 28px 0 12px;
-    }
-    
-    p { margin-bottom: 16px; color: #ccc; }
-    
-    .phase-header {
+      padding: 0 1.5rem;
+      height: 64px;
       display: flex;
       align-items: center;
-      gap: 16px;
-      margin: 56px 0 20px;
-      padding-top: 32px;
-      border-top: 1px solid #1a1a1a;
+      justify-content: space-between;
     }
-    
+    .header nav { display: flex; align-items: center; gap: 2rem; }
+    .header nav a {
+      font-size: 14px;
+      font-weight: 500;
+      color: #6B7280;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .header nav a:hover { color: #2965FF; }
+    @media (max-width: 768px) { .header nav { display: none; } }
+
+    /* HERO */
+    .hero {
+      padding: 5rem 1.5rem 4rem;
+      max-width: 72rem;
+      margin: 0 auto;
+    }
+    .badge {
+      display: inline-block;
+      padding: 6px 16px;
+      border-radius: 100px;
+      background: rgba(41, 101, 255, 0.1);
+      color: #2965FF;
+      font-size: 14px;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-size: clamp(1.875rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.2;
+      max-width: 48rem;
+      margin-bottom: 1rem;
+    }
+    .hero-sub {
+      font-size: 1.125rem;
+      color: #6B7280;
+      max-width: 42rem;
+      line-height: 1.7;
+      margin-bottom: 2.5rem;
+    }
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .stat-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      border: 1px solid #f3f4f6;
+    }
+    .stat-value {
+      font-size: clamp(2rem, 4vw, 2.5rem);
+      font-weight: 700;
+      color: #2965FF;
+    }
+    .stat-label {
+      color: #6B7280;
+      margin-top: 0.5rem;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .tags { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+    .tag {
+      padding: 8px 16px;
+      border-radius: 100px;
+      background: #f3f4f6;
+      font-size: 14px;
+      font-weight: 500;
+      color: #374151;
+    }
+
+    /* SECTIONS */
+    .section {
+      padding: 5rem 1.5rem;
+      max-width: 72rem;
+      margin: 0 auto;
+    }
+    .section-alt {
+      background: rgba(249,250,251,0.5);
+    }
+    .section h2 {
+      font-size: 1.875rem;
+      font-weight: 700;
+      margin-bottom: 3rem;
+    }
+
+    /* PHASE CARDS (timeline style) */
+    .timeline { position: relative; }
+    .timeline-line {
+      position: absolute;
+      left: 1.5rem;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: rgba(41, 101, 255, 0.2);
+    }
+    @media (min-width: 768px) { .timeline-line { left: 2rem; } }
+
+    .phase {
+      position: relative;
+      padding-left: 4rem;
+      margin-bottom: 3rem;
+    }
+    @media (min-width: 768px) { .phase { padding-left: 5rem; } }
+
     .phase-number {
+      position: absolute;
+      left: 0;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      background: #2965FF;
+      color: white;
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 48px;
-      height: 48px;
-      background: linear-gradient(135deg, #6366f1, #8b5cf6);
-      border-radius: 12px;
-      font-size: 20px;
       font-weight: 700;
-      color: white;
-      flex-shrink: 0;
+      font-size: 1.125rem;
+      box-shadow: 0 4px 12px rgba(41, 101, 255, 0.25);
     }
-    
-    .phase-meta {
-      flex: 1;
+    @media (min-width: 768px) {
+      .phase-number { left: 0.5rem; }
     }
-    
+
+    .phase-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      border: 1px solid #f3f4f6;
+    }
+    .phase-header-row {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.5rem;
+      flex-wrap: wrap;
+    }
     .phase-title {
-      font-size: 22px;
+      font-size: 1.25rem;
       font-weight: 700;
-      color: #fff;
-      margin: 0;
     }
-    
     .phase-time {
       font-size: 14px;
-      color: #6366f1;
-      font-weight: 600;
+      color: #6B7280;
+      background: #f3f4f6;
+      padding: 4px 12px;
+      border-radius: 100px;
     }
-    
     .phase-goal {
       font-size: 14px;
-      color: #888;
+      color: #6B7280;
       font-style: italic;
-      margin-bottom: 20px;
+      margin-bottom: 1.25rem;
     }
-    
+
+    /* CONTENT ELEMENTS */
+    h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin: 1.5rem 0 0.75rem;
+    }
+    h4 {
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: #374151;
+      margin: 1.25rem 0 0.5rem;
+    }
+    p { color: #374151; margin-bottom: 1rem; font-size: 15px; }
+    strong { color: #1a1a1a; }
+
     blockquote {
-      border-left: 3px solid #6366f1;
-      padding: 16px 20px;
-      margin: 20px 0;
-      background: #111;
-      border-radius: 0 8px 8px 0;
-      color: #d4d4d8;
+      border-left: 3px solid #2965FF;
+      padding: 1rem 1.25rem;
+      margin: 1rem 0;
+      background: rgba(41, 101, 255, 0.04);
+      border-radius: 0 0.75rem 0.75rem 0;
+      color: #374151;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+
+    ul, ol {
+      margin: 0.75rem 0;
+      padding-left: 1.5rem;
+    }
+    li {
+      margin-bottom: 0.5rem;
+      color: #6B7280;
       font-size: 15px;
     }
-    
-    ul, ol {
-      margin: 16px 0;
-      padding-left: 24px;
-    }
-    
-    li {
-      margin-bottom: 10px;
-      color: #ccc;
-    }
-    
-    strong { color: #fff; }
-    
+    li strong { color: #1a1a1a; }
+
+    /* CALLOUT BOXES */
     .callout {
-      background: #1a1a2e;
-      border: 1px solid #2a2a4a;
-      border-radius: 12px;
-      padding: 20px 24px;
-      margin: 24px 0;
+      background: rgba(41, 101, 255, 0.04);
+      border: 1px solid rgba(41, 101, 255, 0.15);
+      border-radius: 1rem;
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
     }
-    
     .callout-title {
       font-weight: 700;
-      color: #a78bfa;
-      margin-bottom: 8px;
-      font-size: 14px;
+      color: #2965FF;
+      font-size: 13px;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.5rem;
     }
-    
-    .why-box {
-      background: #0f1a0f;
-      border: 1px solid #1a3a1a;
-      border-radius: 12px;
-      padding: 20px 24px;
-      margin: 20px 0;
+    .callout p, .callout blockquote { margin-bottom: 0; }
+
+    .success-box {
+      background: rgba(16, 185, 129, 0.05);
+      border: 1px solid rgba(16, 185, 129, 0.2);
+      border-radius: 1rem;
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
     }
-    
-    .why-box-title {
+    .success-title {
       font-weight: 700;
-      color: #4ade80;
-      margin-bottom: 8px;
-      font-size: 14px;
+      color: #059669;
+      font-size: 13px;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.5rem;
     }
-    
+
     .warning-box {
-      background: #1a1510;
-      border: 1px solid #3a2a1a;
-      border-radius: 12px;
-      padding: 20px 24px;
-      margin: 20px 0;
+      background: rgba(245, 158, 11, 0.05);
+      border: 1px solid rgba(245, 158, 11, 0.2);
+      border-radius: 1rem;
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
     }
-    
     .warning-title {
       font-weight: 700;
-      color: #f59e0b;
-      margin-bottom: 8px;
-      font-size: 14px;
+      color: #d97706;
+      font-size: 13px;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.5rem;
     }
-    
+
+    /* TABLE */
+    .table-wrap {
+      overflow-x: auto;
+      margin: 1.5rem 0;
+    }
     table {
       width: 100%;
       border-collapse: collapse;
-      margin: 24px 0;
       font-size: 14px;
+      background: white;
+      border-radius: 1rem;
+      overflow: hidden;
+      border: 1px solid #f3f4f6;
     }
-    
     th {
-      background: #1a1a2e;
-      color: #a78bfa;
-      font-weight: 600;
+      background: #f9fafb;
       text-align: left;
-      padding: 12px 16px;
-      border-bottom: 2px solid #2a2a4a;
-      font-size: 12px;
+      padding: 0.875rem 1.25rem;
+      font-weight: 600;
+      color: #374151;
+      font-size: 13px;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid #f3f4f6;
     }
-    
     td {
-      padding: 12px 16px;
-      border-bottom: 1px solid #1a1a1a;
-      color: #ccc;
+      padding: 0.875rem 1.25rem;
+      border-bottom: 1px solid #f9fafb;
+      color: #6B7280;
     }
-    
-    tr:hover td { background: #111; }
-    
+    tr:last-child td { border-bottom: none; }
+    tr:hover td { background: #f9fafb; }
+
+    /* OBJECTION CARDS */
+    .objection {
+      background: white;
+      border-radius: 1rem;
+      padding: 1.5rem 2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      border: 1px solid #f3f4f6;
+      margin-bottom: 1.25rem;
+    }
+    .objection-q {
+      font-weight: 700;
+      color: #dc2626;
+      font-size: 15px;
+      margin-bottom: 0.75rem;
+    }
+    .objection blockquote { margin: 0; }
+
+    /* RULES */
     .rule {
       display: flex;
-      gap: 12px;
-      padding: 12px 0;
-      border-bottom: 1px solid #1a1a1a;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid #f3f4f6;
+      align-items: flex-start;
     }
-    
-    .rule-number {
-      color: #6366f1;
+    .rule:last-child { border-bottom: none; }
+    .rule-num {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      background: rgba(41, 101, 255, 0.1);
+      color: #2965FF;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-weight: 700;
-      font-size: 18px;
+      font-size: 14px;
       flex-shrink: 0;
-      width: 28px;
     }
-    
-    .objection {
-      margin: 24px 0;
-    }
-    
-    .objection-q {
-      color: #f87171;
-      font-weight: 700;
-      font-size: 16px;
-      margin-bottom: 8px;
-    }
-    
+    .rule-text { font-size: 15px; color: #374151; padding-top: 4px; }
+
+    /* TOC */
     .toc {
-      background: #111;
-      border: 1px solid #222;
-      border-radius: 12px;
-      padding: 24px 32px;
-      margin: 40px 0;
+      background: white;
+      border: 1px solid #f3f4f6;
+      border-radius: 1rem;
+      padding: 1.5rem 2rem;
+      margin: 2rem 0;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     }
-    
-    .toc-title {
-      font-weight: 700;
-      color: #fff;
-      margin-bottom: 16px;
-      font-size: 16px;
+    .toc-title { font-weight: 700; font-size: 15px; margin-bottom: 1rem; }
+    .toc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.5rem;
     }
-    
     .toc a {
-      color: #a78bfa;
+      color: #2965FF;
       text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      padding: 4px 0;
       display: block;
-      padding: 6px 0;
-      font-size: 15px;
     }
-    
-    .toc a:hover { color: #c4b5fd; }
-    
+    .toc a:hover { text-decoration: underline; }
+
+    /* INTERNAL BADGE */
     .internal-badge {
       display: inline-block;
       background: #dc2626;
@@ -289,280 +393,374 @@
       font-weight: 700;
       letter-spacing: 1px;
       text-transform: uppercase;
-      padding: 4px 10px;
-      border-radius: 4px;
+      padding: 4px 12px;
+      border-radius: 6px;
+      margin-bottom: 1rem;
     }
 
-    @media (max-width: 640px) {
-      h1 { font-size: 28px; }
-      .container { padding: 32px 16px 80px; }
-      .hero { padding: 40px 0 40px; }
+    /* FOOTER */
+    .footer {
+      text-align: center;
+      padding: 3rem 1.5rem;
+      color: #9ca3af;
+      font-size: 14px;
+      border-top: 1px solid #f3f4f6;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="hero">
-      <span class="internal-badge">Internal — Sales Team Only</span>
-      <h1 style="margin-top: 20px;">30-Minute Sales Call Playbook</h1>
-      <p class="hero-sub">The system for turning a 30-minute call into a signed contract. No decks. No fluff. Just proof.</p>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="#">
+        <svg width="112" height="40" viewBox="0 0 56 19.871" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 52.483 5.276 L 52.483 3.883 L 56 3.883 L 56 15.303 L 52.483 15.303 L 52.483 13.909 L 52.391 13.909 C 51.706 14.892 50.45 15.645 48.874 15.645 C 45.882 15.645 43.598 13.247 43.598 9.638 C 43.598 6.121 45.745 3.54 48.874 3.54 C 50.45 3.54 51.706 4.294 52.391 5.276 Z M 49.833 12.311 C 51.409 12.311 52.483 11.077 52.483 9.593 C 52.483 8.04 51.364 6.875 49.833 6.875 C 48.326 6.875 47.184 7.994 47.184 9.593 C 47.184 11.191 48.326 12.311 49.833 12.311 Z M 39.613 5.276 L 39.613 3.883 L 43.131 3.883 L 43.131 16.513 C 43.131 18.683 41.852 19.871 39.659 19.871 L 32.236 19.871 L 32.236 16.308 L 38.791 16.308 C 39.271 16.308 39.613 16.034 39.613 15.577 L 39.613 13.909 L 39.522 13.909 C 38.837 14.892 37.58 15.645 36.005 15.645 C 33.013 15.645 30.729 13.247 30.729 9.638 C 30.729 6.121 32.876 3.54 36.005 3.54 C 37.58 3.54 38.837 4.294 39.522 5.276 Z M 36.964 12.311 C 38.54 12.311 39.613 11.077 39.613 9.593 C 39.613 8.04 38.494 6.875 36.964 6.875 C 35.456 6.875 34.314 7.994 34.314 9.593 C 34.314 11.191 35.456 12.311 36.964 12.311 Z M 24.352 3.54 C 28.166 3.54 30.61 6.601 30.153 10.758 L 21.931 10.758 C 22.159 11.625 22.913 12.402 24.238 12.516 C 25.106 12.585 26.042 12.219 26.408 11.648 L 30.085 11.648 C 29.354 14.252 27.001 15.645 24.284 15.645 C 20.378 15.645 18.368 12.79 18.368 9.593 C 18.368 6.167 20.835 3.54 24.352 3.54 Z M 24.329 6.646 C 23.187 6.646 22.296 7.217 21.977 8.131 L 26.659 8.131 C 26.339 7.172 25.448 6.646 24.329 6.646 Z M 17.609 0 L 17.609 15.303 L 13.841 15.303 L 13.841 5.573 L 9.89 15.303 L 7.72 15.303 L 3.769 5.573 L 3.769 15.303 L 0 15.303 L 0 0 L 5.23 0 L 8.816 9.09 L 12.425 0 Z" fill="#2454FF"/>
+        </svg>
+      </a>
+      <nav>
+        <a href="#precall">Pre-Call</a>
+        <a href="#call-flow">Call Flow</a>
+        <a href="#cheatsheet">Dollar Math</a>
+        <a href="#objections">Objections</a>
+        <a href="#rules">Rules</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <div class="hero">
+    <span class="internal-badge">Internal — Sales Team Only</span>
+    <span class="badge">Sales Playbook</span>
+    <h1>The 30-Minute Call That Closes Deals</h1>
+    <p class="hero-sub">The system for turning a 30-minute sales call into a signed contract. No decks. No fluff. Just proof. Every phase is designed to move the prospect from skeptical to signing.</p>
+
+    <div class="hero-stats">
+      <div class="stat-card">
+        <div class="stat-value">7</div>
+        <div class="stat-label">Call Phases</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">30</div>
+        <div class="stat-label">Minutes Total</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">6</div>
+        <div class="stat-label">Objection Scripts</div>
+      </div>
+    </div>
+
+    <div class="tags">
+      <span class="tag">SEO Prospects</span>
+      <span class="tag">Paid Ads Prospects</span>
+      <span class="tag">Live Audit Approach</span>
+      <span class="tag">No Slide Decks</span>
     </div>
 
     <div class="toc">
-      <div class="toc-title">📋 Contents</div>
-      <a href="#philosophy">The Philosophy</a>
-      <a href="#precall">Pre-Call Prep (5-10 min)</a>
-      <a href="#phase1">Phase 1: Disarm (Minutes 0-3)</a>
-      <a href="#phase2">Phase 2: The Diagnosis (Minutes 3-12)</a>
-      <a href="#phase3">Phase 3: The Bridge (Minutes 12-15)</a>
-      <a href="#phase4">Phase 4: The Reframe (Minutes 15-20)</a>
-      <a href="#phase5">Phase 5: The Timeline (Minutes 20-23)</a>
-      <a href="#phase6">Phase 6: The Close (Minutes 23-28)</a>
-      <a href="#phase7">Phase 7: Next Steps (Minutes 28-30)</a>
-      <a href="#postcall">Post-Call</a>
-      <a href="#cheatsheet">Dollar Math Cheat Sheet</a>
-      <a href="#objections">Objection Responses</a>
-      <a href="#rules">Rules of the Call</a>
+      <div class="toc-title">📋 Quick Navigation</div>
+      <div class="toc-grid">
+        <a href="#philosophy">The Philosophy</a>
+        <a href="#precall">Pre-Call Prep</a>
+        <a href="#phase-1">Phase 1: Disarm</a>
+        <a href="#phase-2">Phase 2: The Diagnosis</a>
+        <a href="#phase-3">Phase 3: The Bridge</a>
+        <a href="#phase-4">Phase 4: The Reframe</a>
+        <a href="#phase-5">Phase 5: The Timeline</a>
+        <a href="#phase-6">Phase 6: The Close</a>
+        <a href="#phase-7">Phase 7: Next Steps</a>
+        <a href="#postcall">Post-Call</a>
+        <a href="#cheatsheet">Dollar Math Cheat Sheet</a>
+        <a href="#objections">Objection Responses</a>
+        <a href="#rules">Rules of the Call</a>
+      </div>
     </div>
+  </div>
 
-    <!-- PHILOSOPHY -->
-    <h2 id="philosophy">The Philosophy</h2>
-    <p>Traditional agency sales calls are 30 minutes of talking about yourself. This call is 30 minutes of talking about <strong>them</strong> — their problems, their wasted money, their missed opportunities.</p>
-    <p>You're not pitching. You're diagnosing. By the time you present MEGA, they've already convinced themselves they need to change.</p>
+  <!-- PHILOSOPHY -->
+  <div class="section-alt">
+    <div class="section" id="philosophy">
+      <h2>The Philosophy</h2>
+      <div style="max-width:42rem;">
+        <p>Traditional agency sales calls are 30 minutes of talking about yourself. This call is 30 minutes of talking about <strong>them</strong> — their problems, their wasted money, their missed opportunities.</p>
+        <p>You're not pitching. You're diagnosing. By the time you present MEGA, they've already convinced themselves they need to change.</p>
+      </div>
+    </div>
+  </div>
 
-    <!-- PRE-CALL -->
-    <h2 id="precall">Pre-Call Prep (5-10 min — NON-NEGOTIABLE)</h2>
+  <!-- PRE-CALL -->
+  <div class="section" id="precall">
+    <h2>Pre-Call Prep (5-10 min — NON-NEGOTIABLE)</h2>
     <p>Before every call, you need ammunition. This is what separates MEGA from every agency pitch they've sat through.</p>
     
-    <h3>What to Prepare:</h3>
-    <ol>
-      <li><strong>Quick SEO snapshot</strong> — Pull their domain. Current keyword count, traffic estimate, top 3 position keywords, content gaps vs. competitors. Use Ray Feng's audit tool or Ultron.</li>
-      <li><strong>Competitor comparison</strong> — Pick their biggest local/industry competitor. Have side-by-side keyword counts ready.</li>
-      <li><strong>Industry case study loaded</strong> — Have the relevant case study from the case study site open in a tab, ready to screenshare.</li>
-      <li><strong>Their current situation</strong> — Check their website, landing pages, any visible ad activity. Note anything broken (no tracking pixel, homepage as landing page, no qualification flow, etc.).</li>
-      <li><strong>Dollar math ready</strong> — Know their industry's average deal value, typical CPL ranges, and close rates so you can do live math on the call.</li>
-    </ol>
+    <div style="max-width:48rem;">
+      <ol>
+        <li><strong>Quick SEO snapshot</strong> — Pull their domain. Current keyword count, traffic estimate, top 3 position keywords, content gaps vs. competitors. Use Ray Feng's audit tool or Ultron.</li>
+        <li><strong>Competitor comparison</strong> — Pick their biggest local/industry competitor. Have side-by-side keyword counts ready.</li>
+        <li><strong>Industry case study loaded</strong> — Have the relevant case study from the case study site open in a tab, ready to screenshare.</li>
+        <li><strong>Their current situation</strong> — Check their website, landing pages, any visible ad activity. Note anything broken (no tracking pixel, homepage as landing page, no qualification flow, etc.).</li>
+        <li><strong>Dollar math ready</strong> — Know their industry's average deal value, typical CPL ranges, and close rates so you can do live math on the call.</li>
+      </ol>
 
-    <div class="callout">
-      <div class="callout-title">💡 If they gave ad account access</div>
-      <p style="margin:0">Review it. Find 2-3 obvious problems you can point to live. This alone closes deals.</p>
-    </div>
-
-    <!-- PHASE 1 -->
-    <div class="phase-header" id="phase1">
-      <div class="phase-number">1</div>
-      <div class="phase-meta">
-        <div class="phase-title">DISARM</div>
-        <div class="phase-time">Minutes 0-3</div>
+      <div class="callout">
+        <div class="callout-title">💡 If they gave ad account access</div>
+        <p>Review it. Find 2-3 obvious problems you can point to live. This alone closes deals.</p>
       </div>
     </div>
-    <p class="phase-goal">Goal: Break the "agency pitch" pattern. Make them feel like this is different.</p>
+  </div>
 
-    <h4>Open with:</h4>
-    <blockquote>"Hey [Name], thanks for taking the time. Before we get into anything — I want to be upfront. I'm not going to walk you through a slide deck or tell you how great we are. I actually did some homework on your business already, and I'd rather spend this time showing you what I found. Sound good?"</blockquote>
+  <!-- CALL FLOW -->
+  <div class="section-alt">
+    <div class="section" id="call-flow">
+      <h2>The Call Flow</h2>
 
-    <div class="why-box">
-      <div class="why-box-title">✅ Why this works</div>
-      <ul>
-        <li>Every other agency opened with "tell me about your business" or a logo slide. You're immediately different.</li>
-        <li>You've signaled competence before saying a single thing about MEGA.</li>
-        <li>"I did homework" triggers curiosity — they want to see what you found.</li>
-      </ul>
+      <div class="timeline">
+        <div class="timeline-line"></div>
+
+        <!-- PHASE 1 -->
+        <div class="phase" id="phase-1">
+          <div class="phase-number">1</div>
+          <div class="phase-card">
+            <div class="phase-header-row">
+              <div class="phase-title">DISARM</div>
+              <span class="phase-time">Minutes 0-3</span>
+            </div>
+            <p class="phase-goal">Goal: Break the "agency pitch" pattern. Make them feel like this is different.</p>
+
+            <h4>Open with:</h4>
+            <blockquote>"Hey [Name], thanks for taking the time. Before we get into anything — I want to be upfront. I'm not going to walk you through a slide deck or tell you how great we are. I actually did some homework on your business already, and I'd rather spend this time showing you what I found. Sound good?"</blockquote>
+
+            <div class="success-box">
+              <div class="success-title">✅ Why this works</div>
+              <ul>
+                <li>Every other agency opened with "tell me about your business" or a logo slide. You're immediately different.</li>
+                <li>You've signaled competence before saying a single thing about MEGA.</li>
+                <li>"I did homework" triggers curiosity — they want to see what you found.</li>
+              </ul>
+            </div>
+
+            <h4>Then qualify quickly (2-3 questions max):</h4>
+            <blockquote>"Before I share what I found — quick context. What's your current monthly marketing budget roughly? And are you working with anyone right now, or handling it in-house?"</blockquote>
+            <p>You need budget and current situation. That's it. Don't interrogate. You'll learn everything else by showing them their own data.</p>
+          </div>
+        </div>
+
+        <!-- PHASE 2 -->
+        <div class="phase" id="phase-2">
+          <div class="phase-number">2</div>
+          <div class="phase-card">
+            <div class="phase-header-row">
+              <div class="phase-title">THE DIAGNOSIS</div>
+              <span class="phase-time">Minutes 3-12</span>
+            </div>
+            <p class="phase-goal">Goal: Create urgency by showing them problems they didn't know they had. This is the "holy shit" phase.</p>
+            <p><strong>Screenshare. Pull up their data. Walk them through it.</strong></p>
+
+            <h4>For SEO prospects:</h4>
+            <blockquote>"So I pulled your domain. You're currently ranking for [X] keywords. Your top competitor, [competitor], has [Y] keywords. That gap represents traffic — and revenue — that's going to them instead of you."</blockquote>
+            <blockquote>"You have [X] pages on your site. [Competitor] has [Y]. In SEO, content volume builds topical authority — Google sees them as the expert in your space because they've covered more ground. Right now, you're bringing a knife to a gunfight."</blockquote>
+            <blockquote>"I also noticed [specific issue — thin content, no blog, no local pages, broken meta tags, etc.]. This is costing you rankings you could have."</blockquote>
+
+            <h4>For Paid Ads prospects:</h4>
+            <blockquote>"I looked at your landing pages. Right now you're sending traffic to [homepage / generic page]. Every visitor that lands there and doesn't convert costs you money. If you're spending $[X]/month, and your landing page converts at maybe 3% instead of the 8-12% we typically see with proper qualification flows, that's [do the math live] leads you're leaving on the table every month."</blockquote>
+            <blockquote>"At your industry's average deal value of $[X], that's roughly $[Y]/month in revenue you're not capturing. Not because your ads are bad — because the infrastructure after the click is broken."</blockquote>
+
+            <div class="callout">
+              <div class="callout-title">💡 If you have ad account access</div>
+              <blockquote>"I found [specific waste — broad match bleeding, no negative keywords, wrong bid strategy, broken conversion tracking]. This alone is costing you roughly $[X]/month. That's not an optimization problem — that's a plumbing problem."</blockquote>
+            </div>
+
+            <div class="warning-box">
+              <div class="warning-title">⚡ Key Moves</div>
+              <ul>
+                <li><strong>Always do the dollar math live.</strong> Don't say "you're losing leads." Say "you're losing $14,000/month."</li>
+                <li><strong>Name the competitor.</strong> It makes it real and triggers competitive instinct.</li>
+                <li><strong>Point to specific, fixable things.</strong> Not vague problems — exact issues you can show on screen.</li>
+                <li><strong>Let them react.</strong> After each point, pause. Let them say "yeah, we've noticed that" or "I didn't know that." Their own acknowledgment sells them.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- PHASE 3 -->
+        <div class="phase" id="phase-3">
+          <div class="phase-number">3</div>
+          <div class="phase-card">
+            <div class="phase-header-row">
+              <div class="phase-title">THE BRIDGE</div>
+              <span class="phase-time">Minutes 12-15</span>
+            </div>
+            <p class="phase-goal">Goal: Transition from "here's your problem" to "here's proof it's fixable" — WITHOUT pitching yet.</p>
+
+            <blockquote>"So the gap is clear. The question is — how fast can you close it, and what does it actually take? Let me show you what happened with a [their industry] company in a similar situation."</blockquote>
+
+            <h4>Walk through the TRAJECTORY, not just the result:</h4>
+            <blockquote>"This is a [industry] company that came to us [X] months ago. They were at [starting metric]. Here's month 1 — [metric]. Month 3 — [metric]. Month 6 — [metric]. Month 8 — [metric]."</blockquote>
+            <blockquote>"What I want you to notice isn't the end number. It's the curve. Month 1 is setup. Month 2 you start seeing movement. By month 3-4, the compounding kicks in. This isn't luck — it's a system producing predictable improvement every single month."</blockquote>
+
+            <h4>For SEO — real proof points:</h4>
+            <blockquote>"HubiFi came to us ranking for 117 keywords. 16 months later — 20,000 keywords. They went from 29 visitors a month to 30,000. We published 320 articles that built topical authority so deep that Google basically had no choice but to rank them."</blockquote>
+            <blockquote>"Bluestone Law — 274 keywords to 4,000 in 5 months. 30 visitors to 2,500. A law firm. In 5 months."</blockquote>
+
+            <h4>For Paid Ads — walk the monthly data:</h4>
+            <blockquote>"Month 1, their cost per qualified lead was $447. By month 3, $271. By month 8, $203. Every month the AI agents learned more about which leads convert, which audiences waste money, which hours of the day perform. That's thousands of optimizations no human team could make manually."</blockquote>
+          </div>
+        </div>
+
+        <!-- PHASE 4 -->
+        <div class="phase" id="phase-4">
+          <div class="phase-number">4</div>
+          <div class="phase-card">
+            <div class="phase-header-row">
+              <div class="phase-title">THE REFRAME</div>
+              <span class="phase-time">Minutes 15-20</span>
+            </div>
+            <p class="phase-goal">Goal: Position MEGA as a fundamentally different category. Not agency vs. agency — AI workforce vs. human hire.</p>
+
+            <blockquote>"Let me be honest about something. We're not an agency. I know that sounds like a line, but hear me out."</blockquote>
+            <blockquote>"A traditional agency assigns you a media buyer who manages 15-20 accounts. They give yours maybe 2 hours a week. They check in on Thursdays. If a keyword starts bleeding $200/day on Monday, they catch it Thursday — that's $800 gone."</blockquote>
+            <blockquote>"What we deploy is an AI workforce. Agents that monitor your campaigns 24/7, make bid adjustments thousands of times per day, catch waste in hours instead of days. You're not getting a person who juggles your account with 19 others. You're getting a system that treats your account like it's the only one."</blockquote>
+
+            <h4>The cost comparison:</h4>
+            <blockquote>"A senior media buyer costs $85K+ a year and manages your one account. A content team to produce what Lindsay produces would cost you $120K+ minimum. An SEO strategist, another $90K. You're looking at $300K+ to build in-house what we deliver for a fraction of that. And our agents don't take PTO, don't get pulled into meetings, and don't have bad weeks."</blockquote>
+
+            <h4>Dollar math for their specific situation:</h4>
+            <blockquote>"You told me you're spending $[X]/month on ads. If we improve your CPL by even 25% — which is conservative based on what we've done in [their industry] — that's [math] more leads per month at the same spend. At your average deal value, that's $[X] in additional revenue. The ROI isn't theoretical — it's arithmetic."</blockquote>
+          </div>
+        </div>
+
+        <!-- PHASE 5 -->
+        <div class="phase" id="phase-5">
+          <div class="phase-number">5</div>
+          <div class="phase-card">
+            <div class="phase-header-row">
+              <div class="phase-title">THE TIMELINE</div>
+              <span class="phase-time">Minutes 20-23</span>
+            </div>
+            <p class="phase-goal">Goal: Make speed a selling point while being honest. Turn the realistic timeline into a competitive advantage.</p>
+
+            <blockquote>"Here's exactly what the first two weeks look like — and I'm going to be more specific than any agency has ever been with you:"</blockquote>
+
+            <div class="callout">
+              <div class="callout-title">📅 The 14-Day Launch Sequence</div>
+              <p><strong>Days 1-3:</strong> Sign up, complete onboarding, give us access to what we need — ad accounts, analytics, CRM. Simple stuff.</p>
+              <p><strong>Days 4-5:</strong> Our instrumentation team gets to work. Tracking pixels, tag manager config, landing pages with qualification flows, CRM integration. Simultaneously, you meet your paid ads strategist for strategy, goals, and first round of creatives.</p>
+              <p><strong>Day 6:</strong> SEO kickoff with your account manager. Content strategy mapped, keyword targets locked.</p>
+              <p><strong>Days 6-14:</strong> Everything gets wired up and tested. By day 14, we're live and the AI agents are deployed on your account.</p>
+            </div>
+
+            <blockquote>"Most agencies take 4-6 weeks to 'onboard' you — which is code for 'we're busy with other clients.' We go live in two weeks because our agents do the heavy lifting, not overworked account managers."</blockquote>
+          </div>
+        </div>
+
+        <!-- PHASE 6 -->
+        <div class="phase" id="phase-6">
+          <div class="phase-number">6</div>
+          <div class="phase-card">
+            <div class="phase-header-row">
+              <div class="phase-title">THE CLOSE</div>
+              <span class="phase-time">Minutes 23-28</span>
+            </div>
+            <p class="phase-goal">Goal: Remove risk, create urgency, get the commitment.</p>
+
+            <h4>The Confidence Play:</h4>
+            <blockquote>"Here's what I'll tell you. Give us 90 days. If the content quality, the keyword trajectory, the lead quality — if any of it doesn't impress you, walk away. We're that confident because we've seen this system work across [X] industries now."</blockquote>
+            <blockquote>"The only risk is waiting. Every month you don't fix [the specific problems you showed them], that's another $[X] in revenue going to your competitors. That's not a scare tactic — you saw the numbers yourself."</blockquote>
+
+            <h4>Handle "I need to think about it":</h4>
+            <blockquote>"Totally understand. What specifically do you want to think through? Is it the budget, the timing, or something else?"</blockquote>
+
+            <h4>If budget:</h4>
+            <blockquote>"What are you spending now on [current agency/in-house]? And what results are you getting? Because the question isn't whether you can afford to try something new — it's whether you can afford to keep paying for what's not working."</blockquote>
+
+            <h4>If trust / burned before:</h4>
+            <blockquote>"I get it. You've been burned. That's exactly why I showed you month-by-month data instead of promises. And that's why I'm saying 90 days with a clear exit — because I don't need to lock you in. The results will keep you."</blockquote>
+
+            <h4>The Final Push:</h4>
+            <blockquote>"Tell you what — I can get your onboarding started today and have your strategist scheduled by [day]. By [two weeks out], you'll have AI agents live on your account doing work your current setup physically cannot do. What would you need to see to feel good about moving forward today?"</blockquote>
+          </div>
+        </div>
+
+        <!-- PHASE 7 -->
+        <div class="phase" id="phase-7">
+          <div class="phase-number">7</div>
+          <div class="phase-card">
+            <div class="phase-header-row">
+              <div class="phase-title">NEXT STEPS</div>
+              <span class="phase-time">Minutes 28-30</span>
+            </div>
+            <p class="phase-goal">Goal: If they say yes — lock it in immediately. If they need a follow-up — make it count.</p>
+
+            <h4>If they're ready:</h4>
+            <blockquote>"Great. I'll send you the onboarding link right now while we're on the call. Takes about 10 minutes to fill out. Once that's done, I'll have your strategist reach out within 24 hours to schedule the kickoff."</blockquote>
+
+            <div class="warning-box">
+              <div class="warning-title">⚠️ Critical</div>
+              <p><strong>Send the link before you hang up.</strong> Don't let enthusiasm cool overnight.</p>
+            </div>
+
+            <h4>If they need a follow-up:</h4>
+            <blockquote>"No problem. I'm going to send you something after this call — not a generic deck, but a custom breakdown specific to your business. Take a look, and let's reconnect [specific day/time]. I'll also send over the [industry] case study so you can dig into the data yourself."</blockquote>
+
+            <div class="warning-box">
+              <div class="warning-title">⚠️ Critical</div>
+              <p><strong>Schedule the follow-up ON the call.</strong> "I'll follow up next week" = dead lead. "Let's book 15 minutes on Thursday at 2" = pipeline.</p>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /timeline -->
     </div>
+  </div>
 
-    <h4>Then qualify quickly (2-3 questions max):</h4>
-    <blockquote>"Before I share what I found — quick context. What's your current monthly marketing budget roughly? And are you working with anyone right now, or handling it in-house?"</blockquote>
-    <p>You need budget and current situation. That's it. Don't interrogate. You'll learn everything else by showing them their own data.</p>
+  <!-- POST-CALL -->
+  <div class="section" id="postcall">
+    <h2>Post-Call (Within 1 Hour)</h2>
+    <div style="max-width:48rem;">
+      <ol>
+        <li><strong>Send the personalized asset</strong> — NOT "nice to meet you, here's our deck." Send a custom audit/report for their business generated by Ultron or Ray's tool. This is the "holy shit, they already did work for me" moment.</li>
+        <li><strong>Send the relevant case study link</strong> — The specific industry one from the case study site.</li>
+        <li><strong>If follow-up scheduled:</strong> Add to CRM with notes on their specific pain points and objections. Your follow-up call should reference exactly what they said.</li>
+      </ol>
+    </div>
+  </div>
 
-    <!-- PHASE 2 -->
-    <div class="phase-header" id="phase2">
-      <div class="phase-number">2</div>
-      <div class="phase-meta">
-        <div class="phase-title">THE DIAGNOSIS</div>
-        <div class="phase-time">Minutes 3-12</div>
+  <!-- CHEAT SHEET -->
+  <div class="section-alt">
+    <div class="section" id="cheatsheet">
+      <h2>💰 Dollar Math Cheat Sheet</h2>
+      <p>Use these benchmarks to do live math on calls. Adjust based on what the prospect tells you.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Industry</th>
+              <th>Avg Deal Value</th>
+              <th>Typical CPL</th>
+              <th>Close Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Legal</strong></td><td>$3,000-8,000</td><td>$150-400</td><td>15-25%</td></tr>
+            <tr><td><strong>Home Services</strong></td><td>$2,500-15,000</td><td>$75-200</td><td>20-30%</td></tr>
+            <tr><td><strong>Medical / Healthcare</strong></td><td>$5,000-50,000</td><td>$100-350</td><td>10-20%</td></tr>
+            <tr><td><strong>Real Estate</strong></td><td>$8,000-25,000</td><td>$50-150</td><td>5-15%</td></tr>
+            <tr><td><strong>Ecommerce</strong></td><td>AOV-dependent</td><td>$15-80</td><td>ROAS 3-6x</td></tr>
+            <tr><td><strong>SaaS / B2B</strong></td><td>$10,000-100,000</td><td>$200-600</td><td>10-20%</td></tr>
+            <tr><td><strong>Financial Services</strong></td><td>$5,000-25,000</td><td>$150-500</td><td>10-20%</td></tr>
+          </tbody>
+        </table>
       </div>
+
+      <h4>The formula to use live:</h4>
+      <blockquote>"If we get your CPL from $[current] to $[improved] — that's [X] more leads at the same budget. At your close rate, that's [Y] more deals. At $[deal value], that's $[Z] more revenue per month. Over a year, that's $[annual]. What's MEGA costing you? [fraction of that number]."</blockquote>
     </div>
-    <p class="phase-goal">Goal: Create urgency by showing them problems they didn't know they had. This is the "holy shit" phase.</p>
-    <p><strong>Screenshare. Pull up their data. Walk them through it.</strong></p>
+  </div>
 
-    <h4>For SEO prospects:</h4>
-    <blockquote>"So I pulled your domain. You're currently ranking for [X] keywords. Your top competitor, [competitor], has [Y] keywords. That gap represents traffic — and revenue — that's going to them instead of you."</blockquote>
-    <blockquote>"You have [X] pages on your site. [Competitor] has [Y]. In SEO, content volume builds topical authority — Google sees them as the expert in your space because they've covered more ground. Right now, you're bringing a knife to a gunfight."</blockquote>
-    <blockquote>"I also noticed [specific issue — thin content, no blog, no local pages, broken meta tags, etc.]. This is costing you rankings you could have."</blockquote>
-
-    <h4>For Paid Ads prospects:</h4>
-    <blockquote>"I looked at your landing pages. Right now you're sending traffic to [homepage / generic page]. Every visitor that lands there and doesn't convert costs you money. If you're spending $[X]/month, and your landing page converts at maybe 3% instead of the 8-12% we typically see with proper qualification flows, that's [do the math live] leads you're leaving on the table every month."</blockquote>
-    <blockquote>"At your industry's average deal value of $[X], that's roughly $[Y]/month in revenue you're not capturing. Not because your ads are bad — because the infrastructure after the click is broken."</blockquote>
-
-    <div class="callout">
-      <div class="callout-title">💡 If you have ad account access</div>
-      <blockquote style="margin:0">"I found [specific waste — broad match bleeding, no negative keywords, wrong bid strategy, broken conversion tracking]. This alone is costing you roughly $[X]/month. That's not an optimization problem — that's a plumbing problem."</blockquote>
-    </div>
-
-    <div class="warning-box">
-      <div class="warning-title">⚡ Key Moves</div>
-      <ul>
-        <li><strong>Always do the dollar math live.</strong> Don't say "you're losing leads." Say "you're losing $14,000/month."</li>
-        <li><strong>Name the competitor.</strong> It makes it real and triggers competitive instinct.</li>
-        <li><strong>Point to specific, fixable things.</strong> Not vague problems — exact issues you can show on screen.</li>
-        <li><strong>Let them react.</strong> After each point, pause. Let them say "yeah, we've noticed that" or "I didn't know that." Their own acknowledgment sells them.</li>
-      </ul>
-    </div>
-
-    <!-- PHASE 3 -->
-    <div class="phase-header" id="phase3">
-      <div class="phase-number">3</div>
-      <div class="phase-meta">
-        <div class="phase-title">THE BRIDGE</div>
-        <div class="phase-time">Minutes 12-15</div>
-      </div>
-    </div>
-    <p class="phase-goal">Goal: Transition from "here's your problem" to "here's proof it's fixable" — WITHOUT pitching yet.</p>
-
-    <blockquote>"So the gap is clear. The question is — how fast can you close it, and what does it actually take? Let me show you what happened with a [their industry] company in a similar situation."</blockquote>
-
-    <h4>Pull up the case study. Walk through the TRAJECTORY, not just the result.</h4>
-    <blockquote>"This is a [industry] company that came to us [X] months ago. They were at [starting metric]. Here's month 1 — [metric]. Month 3 — [metric]. Month 6 — [metric]. Month 8 — [metric]."</blockquote>
-    <blockquote>"What I want you to notice isn't the end number. It's the curve. Month 1 is setup. Month 2 you start seeing movement. By month 3-4, the compounding kicks in. This isn't luck — it's a system producing predictable improvement every single month."</blockquote>
-
-    <h4>For SEO — use the real proof points:</h4>
-    <blockquote>"Let me give you some real numbers. HubiFi came to us ranking for 117 keywords. 16 months later — 20,000 keywords. They went from 29 visitors a month to 30,000. We published 320 articles that built topical authority so deep that Google basically had no choice but to rank them."</blockquote>
-    <blockquote>"Bluestone Law — 274 keywords to 4,000 in 5 months. 30 visitors to 2,500. A law firm. In 5 months."</blockquote>
-
-    <h4>For Paid Ads — walk the monthly data:</h4>
-    <blockquote>"Month 1, their cost per qualified lead was $447. By month 3, $271. By month 8, $203. Every month the AI agents learned more about which leads convert, which audiences waste money, which hours of the day perform. That's thousands of optimizations no human team could make manually."</blockquote>
-
-    <!-- PHASE 4 -->
-    <div class="phase-header" id="phase4">
-      <div class="phase-number">4</div>
-      <div class="phase-meta">
-        <div class="phase-title">THE REFRAME</div>
-        <div class="phase-time">Minutes 15-20</div>
-      </div>
-    </div>
-    <p class="phase-goal">Goal: Position MEGA as a fundamentally different category. Not agency vs. agency — AI workforce vs. human hire.</p>
-
-    <blockquote>"Let me be honest about something. We're not an agency. I know that sounds like a line, but hear me out."</blockquote>
-    <blockquote>"A traditional agency assigns you a media buyer who manages 15-20 accounts. They give yours maybe 2 hours a week. They check in on Thursdays. If a keyword starts bleeding $200/day on Monday, they catch it Thursday — that's $800 gone."</blockquote>
-    <blockquote>"What we deploy is an AI workforce. Agents that monitor your campaigns 24/7, make bid adjustments thousands of times per day, catch waste in hours instead of days. You're not getting a person who juggles your account with 19 others. You're getting a system that treats your account like it's the only one."</blockquote>
-
-    <h4>Hit the cost comparison:</h4>
-    <blockquote>"A senior media buyer costs $85K+ a year and manages your one account. A content team to produce what Lindsay produces would cost you $120K+ minimum. An SEO strategist, another $90K. You're looking at $300K+ to build in-house what we deliver for a fraction of that. And our agents don't take PTO, don't get pulled into meetings, and don't have bad weeks."</blockquote>
-
-    <h4>Dollar math for their specific situation:</h4>
-    <blockquote>"You told me you're spending $[X]/month on ads. If we improve your CPL by even 25% — which is conservative based on what we've done in [their industry] — that's [math] more leads per month at the same spend. At your average deal value, that's $[X] in additional revenue. The ROI isn't theoretical — it's arithmetic."</blockquote>
-
-    <!-- PHASE 5 -->
-    <div class="phase-header" id="phase5">
-      <div class="phase-number">5</div>
-      <div class="phase-meta">
-        <div class="phase-title">THE TIMELINE</div>
-        <div class="phase-time">Minutes 20-23</div>
-      </div>
-    </div>
-    <p class="phase-goal">Goal: Make speed a selling point while being honest. Turn the realistic timeline into a competitive advantage.</p>
-
-    <blockquote>"Here's exactly what the first two weeks look like — and I'm going to be more specific than any agency has ever been with you:"</blockquote>
-
-    <div class="callout">
-      <div class="callout-title">📅 The 14-Day Launch Sequence</div>
-      <p><strong>Days 1-3:</strong> You sign up, complete onboarding, give us access to what we need — ad accounts, analytics, CRM. Simple stuff.</p>
-      <p><strong>Days 4-5:</strong> Our instrumentation team gets to work. Tracking pixels, tag manager configuration, landing pages built with qualification flows, CRM integration so your leads actually go somewhere useful. Simultaneously, you meet with your paid ads strategist to go over strategy, goals, and past efforts. First round of creatives kicks off.</p>
-      <p><strong>Day 6:</strong> SEO kickoff with your account manager. Content strategy mapped, keyword targets locked.</p>
-      <p style="margin:0"><strong>Days 6-14:</strong> Everything gets wired up and tested. By day 14, we're live and the AI agents are deployed on your account.</p>
-    </div>
-
-    <blockquote>"Most agencies take 4-6 weeks to 'onboard' you — which is code for 'we're busy with other clients.' We go live in two weeks because our agents do the heavy lifting, not overworked account managers."</blockquote>
-
-    <!-- PHASE 6 -->
-    <div class="phase-header" id="phase6">
-      <div class="phase-number">6</div>
-      <div class="phase-meta">
-        <div class="phase-title">THE CLOSE</div>
-        <div class="phase-time">Minutes 23-28</div>
-      </div>
-    </div>
-    <p class="phase-goal">Goal: Remove risk, create urgency, get the commitment.</p>
-
-    <h4>The Confidence Play:</h4>
-    <blockquote>"Here's what I'll tell you. Give us 90 days. If the content quality, the keyword trajectory, the lead quality — if any of it doesn't impress you, walk away. We're that confident because we've seen this system work across [X] industries now."</blockquote>
-    <blockquote>"The only risk is waiting. Every month you don't fix [the specific problems you showed them], that's another $[X] in revenue going to your competitors. That's not a scare tactic — you saw the numbers yourself."</blockquote>
-
-    <h4>Handle "I need to think about it":</h4>
-    <blockquote>"Totally understand. What specifically do you want to think through? Is it the budget, the timing, or something else?"</blockquote>
-
-    <h4>If budget:</h4>
-    <blockquote>"What are you spending now on [current agency/in-house]? And what results are you getting? Because the question isn't whether you can afford to try something new — it's whether you can afford to keep paying for what's not working."</blockquote>
-
-    <h4>If trust / burned before:</h4>
-    <blockquote>"I get it. You've been burned. That's exactly why I showed you month-by-month data instead of promises. And that's why I'm saying 90 days with a clear exit — because I don't need to lock you in. The results will keep you."</blockquote>
-
-    <h4>The Final Push:</h4>
-    <blockquote>"Tell you what — I can get your onboarding started today and have your strategist scheduled by [day]. By [two weeks out], you'll have AI agents live on your account doing work your current setup physically cannot do. What would you need to see to feel good about moving forward today?"</blockquote>
-
-    <!-- PHASE 7 -->
-    <div class="phase-header" id="phase7">
-      <div class="phase-number">7</div>
-      <div class="phase-meta">
-        <div class="phase-title">NEXT STEPS</div>
-        <div class="phase-time">Minutes 28-30</div>
-      </div>
-    </div>
-    <p class="phase-goal">Goal: If they say yes — lock it in immediately. If they need a follow-up — make it count.</p>
-
-    <h4>If they're ready:</h4>
-    <blockquote>"Great. I'll send you the onboarding link right now while we're on the call. Takes about 10 minutes to fill out. Once that's done, I'll have your strategist reach out within 24 hours to schedule the kickoff."</blockquote>
-
-    <div class="warning-box">
-      <div class="warning-title">⚠️ Critical</div>
-      <p style="margin:0"><strong>Send the link before you hang up.</strong> Don't let enthusiasm cool overnight.</p>
-    </div>
-
-    <h4>If they need a follow-up:</h4>
-    <blockquote>"No problem. I'm going to send you something after this call — not a generic deck, but a custom breakdown specific to your business. Take a look, and let's reconnect [specific day/time]. I'll also send over the [industry] case study so you can dig into the data yourself."</blockquote>
-
-    <div class="warning-box">
-      <div class="warning-title">⚠️ Critical</div>
-      <p style="margin:0"><strong>Schedule the follow-up ON the call.</strong> "I'll follow up next week" = dead lead. "Let's book 15 minutes on Thursday at 2" = pipeline.</p>
-    </div>
-
-    <!-- POST-CALL -->
-    <h2 id="postcall">Post-Call (Within 1 Hour)</h2>
-    <ol>
-      <li><strong>Send the personalized asset</strong> — NOT "nice to meet you, here's our deck." Send a custom audit/report for their business generated by Ultron or Ray's tool. This is the "holy shit, they already did work for me" moment.</li>
-      <li><strong>Send the relevant case study link</strong> — The specific industry one from the case study site.</li>
-      <li><strong>If follow-up scheduled:</strong> Add to CRM with notes on their specific pain points and objections. Your follow-up call should reference exactly what they said.</li>
-    </ol>
-
-    <!-- CHEAT SHEET -->
-    <h2 id="cheatsheet">💰 Dollar Math Cheat Sheet</h2>
-    <p>Use these benchmarks to do live math on calls. Adjust based on what the prospect tells you.</p>
-
-    <table>
-      <thead>
-        <tr>
-          <th>Industry</th>
-          <th>Avg Deal Value</th>
-          <th>Typical CPL</th>
-          <th>Close Rate</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>Legal</td><td>$3,000-8,000</td><td>$150-400</td><td>15-25%</td></tr>
-        <tr><td>Home Services</td><td>$2,500-15,000</td><td>$75-200</td><td>20-30%</td></tr>
-        <tr><td>Medical/Healthcare</td><td>$5,000-50,000</td><td>$100-350</td><td>10-20%</td></tr>
-        <tr><td>Real Estate</td><td>$8,000-25,000</td><td>$50-150</td><td>5-15%</td></tr>
-        <tr><td>Ecommerce</td><td>AOV-dependent</td><td>$15-80</td><td>ROAS 3-6x</td></tr>
-        <tr><td>SaaS / B2B</td><td>$10,000-100,000</td><td>$200-600</td><td>10-20%</td></tr>
-        <tr><td>Financial Services</td><td>$5,000-25,000</td><td>$150-500</td><td>10-20%</td></tr>
-      </tbody>
-    </table>
-
-    <h4>The formula to use live:</h4>
-    <blockquote>"If we get your CPL from $[current] to $[improved] — that's [X] more leads at the same budget. At your close rate, that's [Y] more deals. At $[deal value], that's $[Z] more revenue per month. Over a year, that's $[annual]. What's MEGA costing you? [fraction of that number]."</blockquote>
-
-    <!-- OBJECTIONS -->
-    <h2 id="objections">🛡️ Objection Responses</h2>
+  <!-- OBJECTIONS -->
+  <div class="section" id="objections">
+    <h2>🛡️ Objection Responses</h2>
 
     <div class="objection">
       <div class="objection-q">"We've been burned by agencies before."</div>
@@ -593,43 +791,52 @@
       <div class="objection-q">"We tried AI tools before and they didn't work."</div>
       <blockquote>"Which ones? [Listen]. Those are tools — they need a human to operate them. MEGA is an AI workforce. Lindsay doesn't need someone to tell her what to write. The ad agents don't need someone to log in and apply recommendations. They run autonomously, 24/7. The difference between an AI tool and an AI agent is the difference between giving someone a hammer and hiring a construction crew."</blockquote>
     </div>
-
-    <!-- RULES -->
-    <h2 id="rules">📏 Rules of the Call</h2>
-
-    <div class="rule">
-      <div class="rule-number">1.</div>
-      <div><strong>Never open a slide deck.</strong> Screenshare their data or the case study site. That's it.</div>
-    </div>
-    <div class="rule">
-      <div class="rule-number">2.</div>
-      <div><strong>Do the dollar math live.</strong> Pull up a calculator on screen. The act of calculating in real-time is more credible than showing a pre-made number.</div>
-    </div>
-    <div class="rule">
-      <div class="rule-number">3.</div>
-      <div><strong>Shut up after asking a question.</strong> Let silence do the work. The prospect will fill it with their real objections.</div>
-    </div>
-    <div class="rule">
-      <div class="rule-number">4.</div>
-      <div><strong>Say "let me show you" more than "let me tell you."</strong> Showing > telling. Always.</div>
-    </div>
-    <div class="rule">
-      <div class="rule-number">5.</div>
-      <div><strong>Name their competitor at least once.</strong> Competitive fire closes deals.</div>
-    </div>
-    <div class="rule">
-      <div class="rule-number">6.</div>
-      <div><strong>Don't trash their current agency unprompted.</strong> Let the data do it. "I'm not saying they're bad — I'm saying there's a gap, and here's exactly what it is."</div>
-    </div>
-    <div class="rule">
-      <div class="rule-number">7.</div>
-      <div><strong>Always schedule the next step before hanging up.</strong> "I'll follow up" = they ghost you. "Let's book 15 minutes on Thursday at 2" = pipeline.</div>
-    </div>
-    <div class="rule">
-      <div class="rule-number">8.</div>
-      <div><strong>Send the follow-up asset within 1 hour.</strong> Speed reinforces the "we're not like other agencies" message.</div>
-    </div>
-
   </div>
+
+  <!-- RULES -->
+  <div class="section-alt">
+    <div class="section" id="rules">
+      <h2>📏 Rules of the Call</h2>
+      <div style="max-width:48rem;">
+        <div class="rule">
+          <div class="rule-num">1</div>
+          <div class="rule-text"><strong>Never open a slide deck.</strong> Screenshare their data or the case study site. That's it.</div>
+        </div>
+        <div class="rule">
+          <div class="rule-num">2</div>
+          <div class="rule-text"><strong>Do the dollar math live.</strong> Pull up a calculator on screen. The act of calculating in real-time is more credible than showing a pre-made number.</div>
+        </div>
+        <div class="rule">
+          <div class="rule-num">3</div>
+          <div class="rule-text"><strong>Shut up after asking a question.</strong> Let silence do the work. The prospect will fill it with their real objections.</div>
+        </div>
+        <div class="rule">
+          <div class="rule-num">4</div>
+          <div class="rule-text"><strong>Say "let me show you" more than "let me tell you."</strong> Showing > telling. Always.</div>
+        </div>
+        <div class="rule">
+          <div class="rule-num">5</div>
+          <div class="rule-text"><strong>Name their competitor at least once.</strong> Competitive fire closes deals.</div>
+        </div>
+        <div class="rule">
+          <div class="rule-num">6</div>
+          <div class="rule-text"><strong>Don't trash their current agency unprompted.</strong> Let the data do it. "I'm not saying they're bad — I'm saying there's a gap, and here's exactly what it is."</div>
+        </div>
+        <div class="rule">
+          <div class="rule-num">7</div>
+          <div class="rule-text"><strong>Always schedule the next step before hanging up.</strong> "I'll follow up" = they ghost you. "Let's book 15 minutes on Thursday at 2" = pipeline.</div>
+        </div>
+        <div class="rule">
+          <div class="rule-num">8</div>
+          <div class="rule-text"><strong>Send the follow-up asset within 1 hour.</strong> Speed reinforces the "we're not like other agencies" message.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>MEGA AI — Internal Sales Playbook &nbsp;·&nbsp; Not for distribution</p>
+  </div>
+
 </body>
 </html>
