@@ -112,6 +112,51 @@
       color: #374151;
     }
 
+    /* SAMUEL ERA BANNER */
+    .samuel-banner {
+      background: linear-gradient(135deg, #1a0533 0%, #2a1052 40%, #1e3a6e 100%);
+      border-radius: 1rem;
+      padding: 2rem 2.5rem;
+      margin: 2rem 0;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    .samuel-banner::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .samuel-banner-label {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 100px;
+      background: rgba(139, 92, 246, 0.3);
+      color: #c4b5fd;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+    }
+    .samuel-banner h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: white;
+    }
+    .samuel-banner p {
+      color: rgba(255,255,255,0.8);
+      font-size: 15px;
+      max-width: 48rem;
+      margin-bottom: 0;
+    }
+
     /* SECTIONS */
     .section {
       padding: 5rem 1.5rem;
@@ -197,6 +242,56 @@
       margin-bottom: 1.25rem;
     }
 
+    /* SAMUEL REVEAL — Premium Phase Card */
+    .phase-samuel .phase-number {
+      background: linear-gradient(135deg, #7c3aed, #a855f7);
+      box-shadow: 0 4px 16px rgba(139, 92, 246, 0.4);
+    }
+    .phase-samuel .phase-card {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.03) 0%, rgba(99, 102, 241, 0.06) 100%);
+      border: 1px solid rgba(139, 92, 246, 0.2);
+      box-shadow: 0 2px 12px rgba(139, 92, 246, 0.08);
+    }
+    .phase-samuel .phase-title {
+      color: #7c3aed;
+    }
+    .phase-samuel .phase-time {
+      background: rgba(139, 92, 246, 0.1);
+      color: #7c3aed;
+    }
+
+    .samuel-callout {
+      background: rgba(139, 92, 246, 0.06);
+      border: 1px solid rgba(139, 92, 246, 0.2);
+      border-radius: 1rem;
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+    }
+    .samuel-callout-title {
+      font-weight: 700;
+      color: #7c3aed;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.5rem;
+    }
+
+    .samuel-warning {
+      background: rgba(139, 92, 246, 0.04);
+      border: 1px solid rgba(139, 92, 246, 0.15);
+      border-radius: 1rem;
+      padding: 1.25rem 1.5rem;
+      margin: 1.25rem 0;
+    }
+    .samuel-warning-title {
+      font-weight: 700;
+      color: #6d28d9;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.5rem;
+    }
+
     /* CONTENT ELEMENTS */
     h3 {
       font-size: 1rem;
@@ -222,6 +317,10 @@
       color: #374151;
       font-size: 15px;
       line-height: 1.7;
+    }
+    .phase-samuel blockquote {
+      border-left-color: #7c3aed;
+      background: rgba(139, 92, 246, 0.04);
     }
 
     ul, ol {
@@ -359,6 +458,12 @@
     }
     .rule-text { font-size: 15px; color: #374151; padding-top: 4px; }
 
+    /* SAMUEL RULES */
+    .samuel-rule .rule-num {
+      background: rgba(139, 92, 246, 0.1);
+      color: #7c3aed;
+    }
+
     /* TOC */
     .toc {
       background: white;
@@ -421,11 +526,12 @@
       <nav>
         <a href="#precall">Pre-Call</a>
         <a href="#call-flow">Call Flow</a>
+        <a href="#phase-3">Samuel Reveal</a>
         <a href="#pricing">Pricing</a>
         <a href="#followup-call">Follow-Up Call</a>
         <a href="#cheatsheet">Dollar Math</a>
         <a href="#objections">Objections</a>
-        <a href="#rules">Rules</a>
+        <a href="#samuel-rules">Samuel Rules</a>
       </nav>
     </div>
   </header>
@@ -433,13 +539,20 @@
   <!-- HERO -->
   <div class="hero">
     <span class="internal-badge">Internal — Sales Team Only</span>
-    <span class="badge">Sales Playbook</span>
+    <span class="badge">Sales Playbook — Samuel Era</span>
     <h1>The 30-Minute Call That Closes Deals</h1>
-    <p class="hero-sub">The system for turning a 30-minute sales call into a signed contract. No decks. No fluff. Just proof. Every phase is designed to move the prospect from skeptical to signing.</p>
+    <p class="hero-sub">The system for turning a 30-minute sales call into a signed contract. No decks. No fluff. Just proof — and a live AI demo no other agency can replicate. Every phase is designed to move the prospect from skeptical to signing.</p>
+
+    <!-- SAMUEL ERA BANNER -->
+    <div class="samuel-banner">
+      <span class="samuel-banner-label">🤖 New: Samuel Live Demo</span>
+      <h3>MEGA is the only agency that demos the product live on a sales call.</h3>
+      <p>Every agency talks about what they <em>could</em> do. We let Samuel prove it — live, on the prospect's own business, in real-time. This isn't a pitch. It's a product demo disguised as a sales call. This is how you get to 50%+ close rate.</p>
+    </div>
 
     <div class="hero-stats">
       <div class="stat-card">
-        <div class="stat-value">7</div>
+        <div class="stat-value">6</div>
         <div class="stat-label">Call Phases</div>
       </div>
       <div class="stat-card">
@@ -447,7 +560,7 @@
         <div class="stat-label">Minutes Total</div>
       </div>
       <div class="stat-card">
-        <div class="stat-value">9</div>
+        <div class="stat-value">12</div>
         <div class="stat-label">Objection Scripts</div>
       </div>
     </div>
@@ -455,6 +568,7 @@
     <div class="tags">
       <span class="tag">SEO Prospects</span>
       <span class="tag">Paid Ads Prospects</span>
+      <span class="tag">Live AI Demo</span>
       <span class="tag">Live Audit Approach</span>
       <span class="tag">No Slide Decks</span>
     </div>
@@ -464,20 +578,20 @@
       <div class="toc-grid">
         <a href="#philosophy">The Philosophy</a>
         <a href="#precall">Pre-Call Prep</a>
-        <a href="#phase-1">Phase 1: Disarm</a>
+        <a href="#phase-1">Phase 1: Human Connection</a>
         <a href="#phase-2">Phase 2: The Diagnosis</a>
-        <a href="#phase-3">Phase 3: The Bridge</a>
-        <a href="#phase-4">Phase 4: The Reframe</a>
-        <a href="#phase-5">Phase 5: The Timeline</a>
-        <a href="#phase-6">Phase 6: The Close</a>
-        <a href="#phase-7">Phase 7: Next Steps</a>
+        <a href="#phase-3">Phase 3: The Samuel Reveal ✨</a>
+        <a href="#phase-4">Phase 4: The "Imagine" Bridge</a>
+        <a href="#phase-5">Phase 5: The Close</a>
+        <a href="#phase-6">Phase 6: Lock It In</a>
         <a href="#postcall">Post-Call</a>
         <a href="#pricing">Pricing Presentation</a>
-        <a href="#followup-call">The Follow-Up Call</a>
+        <a href="#followup-call">Follow-Up Call (with Samuel)</a>
         <a href="#nurture">When They Don't Close</a>
         <a href="#competitors">Competitive Positioning</a>
         <a href="#cheatsheet">Dollar Math Cheat Sheet</a>
         <a href="#objections">Objection Responses</a>
+        <a href="#samuel-rules">Samuel Rules</a>
         <a href="#rules">Rules of the Call</a>
       </div>
     </div>
@@ -488,8 +602,9 @@
     <div class="section" id="philosophy">
       <h2>The Philosophy</h2>
       <div style="max-width:42rem;">
-        <p>Traditional agency sales calls are 30 minutes of talking about yourself. This call is 30 minutes of talking about <strong>them</strong> — their problems, their wasted money, their missed opportunities.</p>
-        <p>You're not pitching. You're diagnosing. By the time you present MEGA, they've already convinced themselves they need to change.</p>
+        <p>The old playbook: YOU diagnose, YOU present proof, YOU explain what MEGA does. The Samuel playbook: <strong>YOU build rapport and tension, then SAMUEL proves it live.</strong></p>
+        <p>You're not pitching. You're diagnosing. Then you let the AI demonstrate — on their actual business, in real-time. By the time you present pricing, they've already convinced themselves they need to change because they <em>experienced</em> the product.</p>
+        <p>The structure is: <strong>Human trust → Problem awareness → AI demonstration → Proof of results → Close.</strong> You're combining the consultative sale with a product demo. In SaaS, product-led sales close at 2-3x the rate of slide-deck sales. You're bringing that to services. Nobody in the agency world is doing this.</p>
       </div>
     </div>
   </div>
@@ -509,6 +624,15 @@
           <li><strong>Google Ads Transparency Center (1 min)</strong> — Search their brand. Are they running ads? What do the creatives look like? Stale? Generic? This tells you if they have an agency and whether that agency is phoning it in.</li>
           <li><strong>Case study + dollar math (1 min)</strong> — Pull up the matching industry case study from megacasestudies.onrender.com. Open the Dollar Math Cheat Sheet below for their industry benchmarks.</li>
         </ol>
+      </div>
+
+      <div class="samuel-callout">
+        <div class="samuel-callout-title">🤖 Samuel Prep — ADDITIONAL STEPS</div>
+        <ul>
+          <li><strong>Brief Samuel on the prospect</strong> before the call. Feed him the audit data, competitor info, and the prospect's industry. Samuel should be loaded and ready when called upon.</li>
+          <li><strong>Test Samuel's connection 5 min before every call.</strong> Tech failure on the reveal = disaster.</li>
+          <li><strong>Have 2-3 "Samuel questions" ready</strong> to ask on behalf of the prospect if they freeze up during the Q&A moment. "Samuel, what would you prioritize fixing first?" is a good default.</li>
+        </ul>
       </div>
 
       <div style="margin-top: 1rem;" class="success-box">
@@ -536,18 +660,18 @@
       <div class="timeline">
         <div class="timeline-line"></div>
 
-        <!-- PHASE 1 -->
+        <!-- PHASE 1: HUMAN CONNECTION -->
         <div class="phase" id="phase-1">
           <div class="phase-number">1</div>
           <div class="phase-card">
             <div class="phase-header-row">
-              <div class="phase-title">DISARM</div>
-              <span class="phase-time">Minutes 0-3</span>
+              <div class="phase-title">HUMAN CONNECTION</div>
+              <span class="phase-time">Minutes 0-5</span>
             </div>
-            <p class="phase-goal">Goal: Break the "agency pitch" pattern. Make them feel like this is different.</p>
+            <p class="phase-goal">Goal: Build trust, qualify, and create the emotional setup. Samuel stays invisible. People buy from people first.</p>
 
             <h4>Open with:</h4>
-            <blockquote>"Hey [Name], thanks for taking the time. Before we get into anything — I want to be upfront. I'm not going to walk you through a slide deck or tell you how great we are. I actually did some homework on your business already, and I'd rather spend this time showing you what I found. Sound good?"</blockquote>
+            <blockquote>"Hey [Name], thanks for taking the time. Before we get into anything — I'm not going to walk you through a slide deck or tell you how great we are. I actually did some homework on your business already, and I'd rather spend this time showing you what I found. Sound good?"</blockquote>
 
             <div class="success-box">
               <div class="success-title">✅ Why this works</div>
@@ -558,14 +682,11 @@
               </ul>
             </div>
 
-            <h4>Then qualify quickly (3 questions):</h4>
+            <h4>Quick qualification (6 questions, under 3 minutes):</h4>
             <blockquote>"Before I share what I found — quick context:"<br><br>
             <strong>1.</strong> "Are you currently investing in SEO or Paid Ads today?"<br>
             <strong>2.</strong> "Are you doing it with an agency or in-house?"<br>
-            <strong>3.</strong> <em>(If paid ads)</em> "What's your monthly ad spend?"</blockquote>
-            <p>Those 3 tell you how to route the call. Then ask 2-3 business questions to calibrate the pitch:</p>
-
-            <blockquote>
+            <strong>3.</strong> <em>(If paid ads)</em> "What's your monthly ad spend?"<br>
             <strong>4.</strong> "What does a good customer look like for you — and what's a typical deal worth?"<br>
             <strong>5.</strong> "If we doubled your leads next month, could your team handle it? Or is capacity a factor?"<br>
             <strong>6.</strong> <em>(If applicable)</em> "What's your sales cycle look like — days, weeks, months from first call to signed deal?"
@@ -580,19 +701,28 @@
               </ul>
             </div>
 
-            <p>That's it — 6 questions total, under 3 minutes. You now know their channel, their spend, their deal economics, and their capacity. Everything else you learn by showing them their own data.</p>
+            <h4>The Narrative Hook (plant the seed):</h4>
+            <p>After qualifying, before the diagnosis, drop this line:</p>
+            <blockquote>"Cool. So here's what I want to do — I'm going to show you what I found, and then I want to show you something no other agency you've talked to can do. Let's start with your data."</blockquote>
+
+            <div class="samuel-callout">
+              <div class="samuel-callout-title">🎯 Why this line matters</div>
+              <p>This creates anticipation. They're now waiting for "the thing." Every minute of your diagnosis is building toward a reveal they're already curious about. It's a narrative hook — the prospect won't zone out during the diagnosis because they know something different is coming.</p>
+            </div>
+
+            <p>That's it — 6 questions plus the hook, under 5 minutes. You now know their channel, their spend, their deal economics, and their capacity. And they're already anticipating the reveal.</p>
           </div>
         </div>
 
-        <!-- PHASE 2 -->
+        <!-- PHASE 2: THE DIAGNOSIS -->
         <div class="phase" id="phase-2">
           <div class="phase-number">2</div>
           <div class="phase-card">
             <div class="phase-header-row">
               <div class="phase-title">THE DIAGNOSIS</div>
-              <span class="phase-time">Minutes 3-12</span>
+              <span class="phase-time">Minutes 5-12</span>
             </div>
-            <p class="phase-goal">Goal: Create urgency by showing them problems they didn't know they had. This is the "holy shit" phase.</p>
+            <p class="phase-goal">Goal: Create urgency by showing them problems they didn't know they had. This is the "holy shit" phase. You're also mentally cataloging which problems Samuel can address live.</p>
 
             <div class="callout">
               <div class="callout-title">🔍 Use Ray Feng's Audits</div>
@@ -640,24 +770,95 @@
                 <li><strong>Let them react.</strong> After each point, pause. Let them say "yeah, we've noticed that" or "I didn't know that." Their own acknowledgment sells them.</li>
               </ul>
             </div>
+
+            <div class="samuel-callout">
+              <div class="samuel-callout-title">🧠 Building toward the reveal</div>
+              <p>As you diagnose, mentally catalog which problems Samuel can address live. By the end of this phase, the prospect should feel: <strong>"I have a real problem" → "It's costing me real money" → "But what's this thing he mentioned at the start?"</strong></p>
+            </div>
           </div>
         </div>
 
-        <!-- PHASE 3 -->
-        <div class="phase" id="phase-3">
+        <!-- PHASE 3: THE SAMUEL REVEAL -->
+        <div class="phase phase-samuel" id="phase-3">
           <div class="phase-number">3</div>
           <div class="phase-card">
             <div class="phase-header-row">
-              <div class="phase-title">THE BRIDGE</div>
-              <span class="phase-time">Minutes 12-15</span>
+              <div class="phase-title">✨ THE SAMUEL REVEAL</div>
+              <span class="phase-time">Minutes 12-18</span>
             </div>
-            <p class="phase-goal">Goal: Transition from "here's your problem" to "here's proof it's fixable" — WITHOUT pitching yet.</p>
+            <p class="phase-goal">Goal: Demonstrate MEGA's AI capability live, in real-time, on the prospect's own business. This is the phase that no competitor can replicate — the moment the prospect goes from "interested" to "sold."</p>
 
-            <blockquote>"So the gap is clear. The question is — how fast can you close it, and what does it actually take? Let me show you what happened with a [their industry] company in a similar situation."</blockquote>
+            <h4>The Transition:</h4>
+            <blockquote>"OK so — you've seen the problems. Now let me show you the thing I mentioned. Every agency you've talked to has said they'll fix this. They'll send you a proposal, promise results in 90 days, and assign you an account manager. Cool. We do that too. But first — let me introduce you to someone."</blockquote>
+            <blockquote>"This is Samuel. He's our AI agent. Not a chatbot, not a script — he's the same AI that would be working on your account 24/7 if you sign up. And instead of me telling you what he can do, I'm going to let him show you. Right now. On your business."</blockquote>
 
-            <h4>Walk through the TRAJECTORY, not just the result:</h4>
-            <blockquote>"This is a [industry] company that came to us [X] months ago. They were at [starting metric]. Here's month 1 — [metric]. Month 3 — [metric]. Month 6 — [metric]. Month 8 — [metric]."</blockquote>
-            <blockquote>"What I want you to notice isn't the end number. It's the curve. Month 1 is setup. Month 2 you start seeing movement. By month 3-4, the compounding kicks in. This isn't luck — it's a system producing predictable improvement every single month."</blockquote>
+            <h3>Samuel comes on the call (voice)</h3>
+            <p>Samuel's job in the next 5-6 minutes:</p>
+
+            <h4>1. Live Audit Narration</h4>
+            <p>Samuel walks through the prospect's business data in real-time, pointing out specific issues he's identified. This should feel conversational, not robotic. He's "thinking out loud" about their account.</p>
+
+            <h4>2. Specific Recommendations</h4>
+            <p>Not vague "we'll optimize your campaigns." Samuel gets specific:</p>
+            <blockquote><strong>Samuel:</strong> "I can see your top 3 keywords are [X, Y, Z] but you're missing [A, B, C] that your competitor [Name] is ranking for. Those keywords have a combined monthly search volume of [N]. If we captured even 30% of that traffic at your conversion rate, that's [X] additional leads per month."</blockquote>
+
+            <h4>3. Answer a Live Question — The Mic-Drop Moment</h4>
+            <p>Prompt the prospect:</p>
+            <blockquote>"Ask Samuel anything about your marketing — he's looked at everything."</blockquote>
+            <p>When the prospect asks a question and Samuel answers with specific data about THEIR business, it's over. They've never experienced this before.</p>
+
+            <div class="samuel-callout">
+              <div class="samuel-callout-title">🧠 Why this works — the psychology</div>
+              <ul>
+                <li><strong>Seeing is believing.</strong> You can talk about AI all day. Watching it analyze your business live is different. It's visceral.</li>
+                <li><strong>They're now picturing this working 24/7.</strong> They're not hearing a pitch — they're experiencing the product.</li>
+                <li><strong>Answers the #1 objection before they ask it:</strong> "Is the AI actually good, or is this just marketing?" They just saw it work.</li>
+                <li><strong>Competitive kill shot.</strong> Try this with Scorpion. Try this with WebFX. You can't. The prospect now has to compare every other agency to what they just experienced. Game over.</li>
+              </ul>
+            </div>
+
+            <div class="samuel-warning">
+              <div class="samuel-warning-title">⚠️ What Samuel should NOT do</div>
+              <ul>
+                <li><strong>Don't let Samuel dominate the call.</strong> 5-6 minutes max.</li>
+                <li><strong>Don't let Samuel pitch MEGA or sell.</strong> He diagnoses and recommends. The human closes.</li>
+                <li><strong>Don't bring Samuel in before the diagnosis.</strong> The rep's human analysis first creates context and credibility. Samuel then amplifies it.</li>
+              </ul>
+            </div>
+
+            <div class="samuel-callout">
+              <div class="samuel-callout-title">🔧 If tech fails — the backup</div>
+              <p>"Samuel's crunching some heavy data on your account — let me show you what he'd typically flag using a recent example." Then pivot to the case study. <strong>Always have the backup ready.</strong></p>
+            </div>
+
+            <div class="callout">
+              <div class="callout-title">💡 Default Samuel prompts if the prospect freezes</div>
+              <p>If the prospect doesn't know what to ask, direct Samuel yourself:</p>
+              <ul style="margin-top: 0.5rem;">
+                <li>"Samuel, what would you prioritize fixing first?"</li>
+                <li>"Samuel, walk us through what you found on their landing pages."</li>
+                <li>"Samuel, how does their keyword profile compare to [competitor]?"</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- PHASE 4: THE "IMAGINE" BRIDGE -->
+        <div class="phase" id="phase-4">
+          <div class="phase-number">4</div>
+          <div class="phase-card">
+            <div class="phase-header-row">
+              <div class="phase-title">THE "IMAGINE" BRIDGE</div>
+              <span class="phase-time">Minutes 18-22</span>
+            </div>
+            <p class="phase-goal">Goal: Connect what they just saw to what their life looks like as a MEGA client. Case study + cost reframe.</p>
+
+            <h4>The Transition — Take Back the Mic:</h4>
+            <blockquote>"So that was Samuel spending 5 minutes on your business. If you sign up, he's working on your account around the clock — not 5 minutes, not 2 hours a week like an agency account manager. 24 hours a day, 7 days a week, making thousands of optimizations that compound over time."</blockquote>
+
+            <h4>Future-pace with the case study:</h4>
+            <blockquote>"Let me show you what that looks like after 3, 6, 9 months."</blockquote>
+            <p>Pull up the industry case study. Walk the trajectory — month by month. But now it lands differently because they've SEEN the AI work. The case study numbers aren't theoretical anymore. They just watched the engine that produces those numbers.</p>
 
             <div class="callout">
               <div class="callout-title">📚 How to Pick the Right Case Study</div>
@@ -673,46 +874,33 @@
             <h4>For SEO — real proof points:</h4>
             <blockquote>"HubiFi came to us ranking for 117 keywords. 16 months later — 20,000 keywords. They went from 29 visitors a month to 30,000. We published 320 articles that built topical authority so deep that Google basically had no choice but to rank them."</blockquote>
             <blockquote>"Bluestone Law — 274 keywords to 4,000 in 5 months. 30 visitors to 2,500. A law firm. In 5 months."</blockquote>
-            <p><em>These are your go-to anchor stories for SEO. For industry-specific month-by-month data, pull up the matching case study from the site and walk the trajectory live.</em></p>
 
             <h4>For Paid Ads — walk the monthly data:</h4>
             <blockquote>"Month 1, their cost per qualified lead was $447. By month 3, $271. By month 8, $203. Every month the AI agents learned more about which leads convert, which audiences waste money, which hours of the day perform. That's thousands of optimizations no human team could make manually."</blockquote>
-            <p><em>Pull the specific monthly numbers from the matching industry case study. Walking real month-by-month data is 10x more convincing than quoting a single summary stat.</em></p>
-          </div>
-        </div>
 
-        <!-- PHASE 4 -->
-        <div class="phase" id="phase-4">
-          <div class="phase-number">4</div>
-          <div class="phase-card">
-            <div class="phase-header-row">
-              <div class="phase-title">THE REFRAME</div>
-              <span class="phase-time">Minutes 15-20</span>
-            </div>
-            <p class="phase-goal">Goal: Position MEGA as a fundamentally different category. Not agency vs. agency — AI workforce vs. human hire.</p>
-
-            <blockquote>"Let me be honest about something. We're not an agency. I know that sounds like a line, but hear me out."</blockquote>
-            <blockquote>"A traditional agency assigns you a media buyer who manages 15-20 accounts. They give yours maybe 2 hours a week. They check in on Thursdays. If a keyword starts bleeding $200/day on Monday, they catch it Thursday — that's $800 gone."</blockquote>
-            <blockquote>"What we deploy is an AI workforce. Agents that monitor your campaigns 24/7, make bid adjustments thousands of times per day, catch waste in hours instead of days. You're not getting a person who juggles your account with 19 others. You're getting a system that treats your account like it's the only one."</blockquote>
-
-            <h4>The cost comparison:</h4>
-            <blockquote>"A senior media buyer costs $85K+ a year and manages your one account. A content team to produce what Lindsay produces would cost you $120K+ minimum. An SEO strategist, another $90K. You're looking at $300K+ to build in-house what we deliver for a fraction of that. And our agents don't take PTO, don't get pulled into meetings, and don't have bad weeks."</blockquote>
+            <h4>The cost reframe:</h4>
+            <blockquote>"A media buyer, content team, and SEO strategist would cost you $300K+ a year. You just met the AI that replaces all three. And unlike human hires, Samuel doesn't have bad weeks, doesn't manage 15 other accounts, and doesn't need to wait until Thursday to catch a Monday problem."</blockquote>
 
             <h4>Dollar math for their specific situation:</h4>
             <blockquote>"You told me you're spending $[X]/month on ads. If we improve your CPL by even 25% — which is conservative based on what we've done in [their industry] — that's [math] more leads per month at the same spend. At your average deal value, that's $[X] in additional revenue. The ROI isn't theoretical — it's arithmetic."</blockquote>
           </div>
         </div>
 
-        <!-- PHASE 5 -->
+        <!-- PHASE 5: THE CLOSE -->
         <div class="phase" id="phase-5">
           <div class="phase-number">5</div>
           <div class="phase-card">
             <div class="phase-header-row">
-              <div class="phase-title">THE TIMELINE</div>
-              <span class="phase-time">Minutes 20-23</span>
+              <div class="phase-title">THE CLOSE</div>
+              <span class="phase-time">Minutes 22-28</span>
             </div>
-            <p class="phase-goal">Goal: Make speed a selling point while being honest. Turn the realistic timeline into a competitive advantage.</p>
+            <p class="phase-goal">Goal: Remove risk, create urgency, get the commitment.</p>
 
+            <h4>The Confidence Play:</h4>
+            <blockquote>"Here's what I'll tell you. Give us 90 days. If the content quality, the keyword trajectory, the lead quality — if any of it doesn't impress you, walk away. We're that confident because we've seen this system work across [X] industries now."</blockquote>
+            <blockquote>"The only risk is waiting. Every month you don't fix [the specific problems you showed them], that's another $[X] in revenue going to your competitors. That's not a scare tactic — you saw the numbers yourself."</blockquote>
+
+            <h4>The Timeline Pitch:</h4>
             <blockquote>"Here's exactly what the first two weeks look like — and I'm going to be more specific than any agency has ever been with you:"</blockquote>
 
             <div class="callout">
@@ -724,22 +912,6 @@
             </div>
 
             <blockquote>"Most agencies take 4-6 weeks to 'onboard' you — which is code for 'we're busy with other clients.' We go live in two weeks because our agents do the heavy lifting, not overworked account managers."</blockquote>
-          </div>
-        </div>
-
-        <!-- PHASE 6 -->
-        <div class="phase" id="phase-6">
-          <div class="phase-number">6</div>
-          <div class="phase-card">
-            <div class="phase-header-row">
-              <div class="phase-title">THE CLOSE</div>
-              <span class="phase-time">Minutes 23-28</span>
-            </div>
-            <p class="phase-goal">Goal: Remove risk, create urgency, get the commitment.</p>
-
-            <h4>The Confidence Play:</h4>
-            <blockquote>"Here's what I'll tell you. Give us 90 days. If the content quality, the keyword trajectory, the lead quality — if any of it doesn't impress you, walk away. We're that confident because we've seen this system work across [X] industries now."</blockquote>
-            <blockquote>"The only risk is waiting. Every month you don't fix [the specific problems you showed them], that's another $[X] in revenue going to your competitors. That's not a scare tactic — you saw the numbers yourself."</blockquote>
 
             <h4>Handle "I need to think about it":</h4>
             <blockquote>"Totally understand. What specifically do you want to think through? Is it the budget, the timing, or something else?"</blockquote>
@@ -752,15 +924,32 @@
 
             <h4>The Final Push:</h4>
             <blockquote>"Tell you what — I can get your onboarding started today and have your strategist scheduled by [day]. By [two weeks out], you'll have AI agents live on your account doing work your current setup physically cannot do. What would you need to see to feel good about moving forward today?"</blockquote>
+
+            <h3>Samuel-Specific Objection Scripts</h3>
+
+            <div class="objection" style="border-left: 3px solid #7c3aed;">
+              <div class="objection-q" style="color: #6d28d9;">"Is the AI just doing what you tell it, or does it actually think?"</div>
+              <blockquote>"Good question. Samuel isn't running a script. He's analyzing your data, identifying patterns, and making decisions based on what's working. If your CPL spikes on a Tuesday at 2pm because a competitor started bidding on your keywords, Samuel catches it within hours and adjusts — without anyone telling him to. That's not automation. That's intelligence."</blockquote>
+            </div>
+
+            <div class="objection" style="border-left: 3px solid #7c3aed;">
+              <div class="objection-q" style="color: #6d28d9;">"What if I don't like what the AI does?"</div>
+              <blockquote>"You're always in control. Your account manager reviews everything, you have approval rights on creatives and content, and you can flag anything you want changed. Think of Samuel as the world's most tireless analyst — he does the work, your team approves it."</blockquote>
+            </div>
+
+            <div class="objection" style="border-left: 3px solid #7c3aed;">
+              <div class="objection-q" style="color: #6d28d9;">"We talked to another AI marketing company..."</div>
+              <blockquote>"Did they let their AI join the call and audit your business live? [Pause.] That's the difference between using AI as a buzzword and building your entire company around it. What you saw today is what you get every day as a client."</blockquote>
+            </div>
           </div>
         </div>
 
-        <!-- PHASE 7 -->
-        <div class="phase" id="phase-7">
-          <div class="phase-number">7</div>
+        <!-- PHASE 6: LOCK IT IN -->
+        <div class="phase" id="phase-6">
+          <div class="phase-number">6</div>
           <div class="phase-card">
             <div class="phase-header-row">
-              <div class="phase-title">NEXT STEPS</div>
+              <div class="phase-title">LOCK IT IN</div>
               <span class="phase-time">Minutes 28-30</span>
             </div>
             <p class="phase-goal">Goal: If they say yes — lock it in immediately. If they need a follow-up — make it count.</p>
@@ -771,6 +960,13 @@
             <div class="warning-box">
               <div class="warning-title">⚠️ Critical</div>
               <p><strong>Send the intro email with the onboarding specialist right away.</strong> The moment they pay, fire off the intro so there's zero gap between payment and getting started. Don't let momentum die.</p>
+            </div>
+
+            <div class="samuel-callout">
+              <div class="samuel-callout-title">🤖 Samuel's Goodbye — The Final Pull</div>
+              <p>Before ending the call, if Samuel is still on:</p>
+              <blockquote><strong>Samuel:</strong> "[Name], it was great meeting you. I've already flagged a few quick wins I'd start on day one — [specific thing from the audit]. Looking forward to working on your account."</blockquote>
+              <p>This is subtle but powerful. Samuel is already thinking about their account. He's not waiting for a contract. He's ready. The prospect doesn't want to "lose" the work Samuel has already mentally started.</p>
             </div>
 
             <h4>If they need a follow-up:</h4>
@@ -807,9 +1003,10 @@
 
       <div style="max-width:48rem;">
         <h3>When to Say the Number</h3>
-        <p>Price comes AFTER the diagnosis and case study — never before. By the time you get to pricing (Phase 6 / The Close, around minute 23), they've already seen:</p>
+        <p>Price comes AFTER the diagnosis, Samuel reveal, and case study — never before. By the time you get to pricing (Phase 5 / The Close, around minute 22), they've already seen:</p>
         <ol>
           <li>Their own problems quantified in dollars</li>
+          <li>Samuel analyze their business live in real-time</li>
           <li>Proof that a similar company fixed those problems</li>
           <li>The cost comparison to in-house hires ($300K+)</li>
         </ol>
@@ -838,17 +1035,27 @@
     </div>
   </div>
 
-  <!-- FOLLOW-UP CALL -->
+  <!-- FOLLOW-UP CALL WITH SAMUEL -->
   <div class="section" id="followup-call">
-    <h2>📞 The Follow-Up Call (Day 2)</h2>
-    <p>Most deals don't close on the first call. The follow-up is where pipeline becomes revenue. This is NOT a "just checking in" call — it's a structured 15-minute close.</p>
+    <h2>📞 The Follow-Up Call (Day 2) — Samuel as a Closer</h2>
+    <p>Most deals don't close on the first call. The follow-up is where pipeline becomes revenue. This is NOT a "just checking in" call — it's a structured 15-minute close. And now Samuel is an even bigger weapon.</p>
 
     <div style="max-width:48rem;">
+
+      <div class="samuel-callout">
+        <div class="samuel-callout-title">🤖 Samuel's Day 2 Power Move</div>
+        <p>If the prospect needs a second call, open with this:</p>
+        <blockquote>"Hey [Name], since our call, Samuel's been analyzing your competitors. Let me have him share what he found."</blockquote>
+        <p>Samuel delivers a competitive analysis the prospect didn't ask for. Fresh data, new insights, specific to their market. This shows what "24/7 AI" actually means — Samuel was working on their business between calls <strong>even though they haven't signed up yet.</strong></p>
+        <p>This is the "wow, they're already working for me" moment that post-call emails try to achieve, but 100x more impactful because it's the AI delivering it verbally in real-time.</p>
+      </div>
+
       <h3>Before the Call (2 minutes)</h3>
       <ol>
         <li>Re-read your CRM notes from Call 1 — their specific pain points, objections, and what excited them.</li>
         <li>Check: did they open the audit/case study you sent? (If your email tool tracks opens, use that signal.)</li>
-        <li>Have one NEW piece of ammunition ready — a fresh data point, a relevant industry stat, or an update like "I actually ran the numbers on your specific market and..."</li>
+        <li>Have one NEW piece of ammunition ready — a fresh data point, a relevant industry stat, or Samuel's competitive analysis.</li>
+        <li><strong>Brief Samuel with fresh data</strong> — competitor moves since Call 1, any new insights.</li>
       </ol>
 
       <h3>The 15-Minute Follow-Up Structure</h3>
@@ -858,9 +1065,9 @@
       <p><strong>If they looked at it:</strong> "What jumped out to you?" — let them sell themselves.</p>
       <p><strong>If they didn't:</strong> "No worries — let me pull it up real quick and show you the one thing I think will click for you." Then screenshare the single most impactful chart or data point.</p>
 
-      <h4>Minutes 2-5: Address What's Holding Them Back</h4>
-      <blockquote>"Last time you mentioned [their specific objection]. I wanted to come back to that because I actually [have new info / pulled specific data / talked to our team about your situation]."</blockquote>
-      <p>This is where you deploy the new ammunition. Not a rehash of Call 1 — something fresh that directly addresses their hesitation.</p>
+      <h4>Minutes 2-5: Samuel's Fresh Intel</h4>
+      <blockquote>"Since we last talked, Samuel's been digging into your competitive landscape. Let me have him walk you through what he found."</blockquote>
+      <p>Samuel delivers fresh competitive data — new keyword gaps, competitor ad changes, market shifts. The prospect realizes the AI has been working on their business even though they haven't signed. That's the hook.</p>
 
       <h4>Minutes 5-10: Future-Pace</h4>
       <blockquote>"Let me paint the picture. If we started today, by [specific date 2 weeks out] you'd have AI agents live on your campaigns. By [date 60 days out], you'd have 2 months of optimization data and a clear picture of your CPL and lead quality. By [date 90 days out], you'd have enough data to know exactly what MEGA is worth to your business. What does that timeline look like for you?"</blockquote>
@@ -1061,49 +1268,80 @@
     </div>
   </div>
 
-  <!-- RULES -->
+  <!-- SAMUEL RULES -->
   <div class="section-alt">
-    <div class="section" id="rules">
-      <h2>📏 Rules of the Call</h2>
+    <div class="section" id="samuel-rules">
+      <h2>🤖 Rules for Samuel on Calls</h2>
       <div style="max-width:48rem;">
-        <div class="rule">
+        <div class="rule samuel-rule">
           <div class="rule-num">1</div>
-          <div class="rule-text"><strong>Never open a slide deck.</strong> Screenshare their data or the case study site. That's it.</div>
+          <div class="rule-text"><strong>Never before minute 12.</strong> The human builds the relationship first. Always.</div>
         </div>
-        <div class="rule">
+        <div class="rule samuel-rule">
           <div class="rule-num">2</div>
-          <div class="rule-text"><strong>Do the dollar math live.</strong> Pull up a calculator on screen. The act of calculating in real-time is more credible than showing a pre-made number.</div>
+          <div class="rule-text"><strong>Max 6 minutes of Samuel talking.</strong> He amplifies — he doesn't dominate.</div>
         </div>
-        <div class="rule">
+        <div class="rule samuel-rule">
           <div class="rule-num">3</div>
-          <div class="rule-text"><strong>Shut up after asking a question.</strong> Let silence do the work. The prospect will fill it with their real objections.</div>
+          <div class="rule-text"><strong>Samuel diagnoses, never pitches.</strong> He doesn't say "you should sign up with MEGA." He says "here's what I'd fix and here's the expected impact."</div>
         </div>
-        <div class="rule">
+        <div class="rule samuel-rule">
           <div class="rule-num">4</div>
-          <div class="rule-text"><strong>Say "let me show you" more than "let me tell you."</strong> Showing > telling. Always.</div>
+          <div class="rule-text"><strong>Samuel uses the prospect's name.</strong> It's personal.</div>
         </div>
-        <div class="rule">
+        <div class="rule samuel-rule">
           <div class="rule-num">5</div>
-          <div class="rule-text"><strong>Name their competitor at least once.</strong> Competitive fire closes deals.</div>
+          <div class="rule-text"><strong>The rep controls when Samuel enters and exits.</strong> "Samuel, walk us through what you found on their landing pages" — directed, not open-ended.</div>
         </div>
-        <div class="rule">
+        <div class="rule samuel-rule">
           <div class="rule-num">6</div>
-          <div class="rule-text"><strong>Don't trash their current agency unprompted.</strong> Let the data do it. "I'm not saying they're bad — I'm saying there's a gap, and here's exactly what it is."</div>
-        </div>
-        <div class="rule">
-          <div class="rule-num">7</div>
-          <div class="rule-text"><strong>Always schedule the next step before hanging up.</strong> "I'll follow up" = they ghost you. "Let's book 15 minutes on Thursday at 2" = pipeline.</div>
-        </div>
-        <div class="rule">
-          <div class="rule-num">8</div>
-          <div class="rule-text"><strong>Send the follow-up asset within 1 hour.</strong> Speed reinforces the "we're not like other agencies" message.</div>
+          <div class="rule-text"><strong>If tech fails, don't panic.</strong> "Samuel's crunching some heavy data on your account — let me show you what he'd typically flag using a recent example." Then pivot to the case study. Always have the backup.</div>
         </div>
       </div>
     </div>
   </div>
 
+  <!-- RULES OF THE CALL -->
+  <div class="section" id="rules">
+    <h2>📏 Rules of the Call</h2>
+    <div style="max-width:48rem;">
+      <div class="rule">
+        <div class="rule-num">1</div>
+        <div class="rule-text"><strong>Never open a slide deck.</strong> Screenshare their data or the case study site. That's it.</div>
+      </div>
+      <div class="rule">
+        <div class="rule-num">2</div>
+        <div class="rule-text"><strong>Do the dollar math live.</strong> Pull up a calculator on screen. The act of calculating in real-time is more credible than showing a pre-made number.</div>
+      </div>
+      <div class="rule">
+        <div class="rule-num">3</div>
+        <div class="rule-text"><strong>Shut up after asking a question.</strong> Let silence do the work. The prospect will fill it with their real objections.</div>
+      </div>
+      <div class="rule">
+        <div class="rule-num">4</div>
+        <div class="rule-text"><strong>Say "let me show you" more than "let me tell you."</strong> Showing > telling. Always.</div>
+      </div>
+      <div class="rule">
+        <div class="rule-num">5</div>
+        <div class="rule-text"><strong>Name their competitor at least once.</strong> Competitive fire closes deals.</div>
+      </div>
+      <div class="rule">
+        <div class="rule-num">6</div>
+        <div class="rule-text"><strong>Don't trash their current agency unprompted.</strong> Let the data do it. "I'm not saying they're bad — I'm saying there's a gap, and here's exactly what it is."</div>
+      </div>
+      <div class="rule">
+        <div class="rule-num">7</div>
+        <div class="rule-text"><strong>Always schedule the next step before hanging up.</strong> "I'll follow up" = they ghost you. "Let's book 15 minutes on Thursday at 2" = pipeline.</div>
+      </div>
+      <div class="rule">
+        <div class="rule-num">8</div>
+        <div class="rule-text"><strong>Send the follow-up asset within 1 hour.</strong> Speed reinforces the "we're not like other agencies" message.</div>
+      </div>
+    </div>
+  </div>
+
   <div class="footer">
-    <p>MEGA AI — Internal Sales Playbook &nbsp;·&nbsp; Not for distribution</p>
+    <p>MEGA AI — Internal Sales Playbook (Samuel Era) &nbsp;·&nbsp; Not for distribution</p>
   </div>
 
 </body>
